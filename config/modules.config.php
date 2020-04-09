@@ -26,4 +26,5 @@ return [
     'Laminas\Router',
     'Laminas\Validator',
     'Application',
+    'Employee',
 ];

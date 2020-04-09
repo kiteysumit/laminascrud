@@ -1,0 +1,55 @@
+<?php
+    $form->setAttribute('action', $this->url('employee', ['action' => 'create']));
+    $form->prepare();
+?>
+<form action="<?php echo $form->getAttribute('action'); ?>"
+      method="<?php echo $form->getAttribute('method'); ?>">
+    <h2>Add Employee</h2>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label"><?php echo $form->get('firstName')->getLabel(); ?></label>
+        <div class="col-sm-5">
+            <?php echo $this->formElement($form->get('firstName')); ?>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label"><?php echo $form->get('lastName')->getLabel(); ?></label>
+        <div class="col-sm-5">
+            <?php echo $this->formElement($form->get('lastName')); ?>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label"><?php echo $form->get('gender')->getLabel(); ?></label>
+        <div class="col-sm-5">
+            <div class="form-check form-check-inline">
+                <?php echo $this->formRadio($form->get('gender')); ?>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label"><?php echo $form->get('birthDate')->getLabel(); ?></label>
+        <div class="col-sm-5">
+            <?php echo $this->formElement($form->get('birthDate')); ?>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label"><?php echo $form->get('department')->getLabel(); ?></label>
+        <div class="col-sm-5">
+            <?php echo $this->formElement($form->get('department')); ?>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label"><?php echo $form->get('skills')->getLabel(); ?></label>
+        <div class="col-sm-5 form-check">
+            <?php echo $this->formElement($form->get('skills')); ?>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-7">
+            <?php echo $this->formButton($form->get('submit'), 'Save'); ?>
+            <a href="<?php echo $this->basePath('employee/index'); ?>"
+               type="button" class="btn btn-outline-dark float-right mr-2">
+                Back
+            </a>
+        </div>
+    </div>
+</form>

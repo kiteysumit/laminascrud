@@ -1,0 +1,57 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+?>
+
+<div class="container">
+    <h1>
+        Employees
+        <a href="<?php echo $this->basePath('employee/create'); ?>"
+           type="button" class="btn btn-outline-success">
+            Create
+        </a>
+    </h1>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php if (count($employees) > 0):
+            foreach ($employees as $employee):
+            ?>
+            <tr>
+                <th scope="row"><?php echo $employee->getId(); ?></th>
+                <td><?php echo $employee->getFirstName(); ?></td>
+                <td><?php echo $employee->getLastName(); ?></td>
+                <td><?php echo $employee->getGenderFormatted(); ?></td>
+                <td><?php echo $employee->getBirthDate(); ?></td>
+                <td>
+                    <a href="<?php echo $this->url('employee', ['action' => 'view', 'id' => $employee->getId()]); ?>"
+                       type="button" class="btn btn-outline-primary">
+                        View
+                    </a>
+                    <a href="<?php echo $this->url('employee', ['action' => 'edit', 'id' => $employee->getId()]); ?>"
+                       type="button" class="btn btn-outline-secondary">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            <?php
+            endforeach;
+        else:
+            ?>
+            <tr>
+                <th scope="row" colspan="5" class="text-center">No records found</th>
+            </tr>
+        <?php endif;?>
+        </tbody>
+    </table>
+</div>

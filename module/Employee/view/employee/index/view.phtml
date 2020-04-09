@@ -1,0 +1,32 @@
+<h3>View Employee:
+    <a href="<?php echo $this->basePath('employee/index'); ?>"
+       type="button" class="btn btn-outline-success">
+        Back
+    </a>
+</h3>
+<div class="form-group row">
+    <div class="col-sm-2 font-weight-bold">First Name:</div>
+    <div class="col-sm-10">
+        <?php echo $employee->getFirstName(); ?>
+    </div>
+    <div class="col-sm-2 font-weight-bold">Last Name:</div>
+    <div class="col-sm-10">
+        <?php echo $employee->getLastName()?>
+    </div>
+    <div class="col-sm-2 font-weight-bold">Gender:</div>
+    <div class="col-sm-10">
+        <?php echo $employee->getGenderFormatted()?>
+    </div>
+    <div class="col-sm-2 font-weight-bold">Date of Birth:</div>
+    <div class="col-sm-10">
+        <?php echo $employee->getBirthDate()?>
+    </div>
+    <div class="col-sm-2 font-weight-bold">Department:</div>
+    <div class="col-sm-10">
+        <?php echo $employee->getDepartment()?>
+    </div>
+    <div class="col-sm-2 font-weight-bold">Skills:</div>
+    <div class="col-sm-10">
+        <?php echo implode(',', $employee->getSkills())?>
+    </div>
+</div>

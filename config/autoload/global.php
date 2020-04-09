@@ -13,5 +13,10 @@
  */
 
 return [
-    // ...
+    'db' => [
+        'driver' => 'Pdo',
+        'dsn' => 'mysql:dbname=laminascrud;host=localhost',
+        'username' => 'root',
+        'password' => '',
+    ],
 ];
